@@ -15,7 +15,7 @@ class _ListChatsState extends State<ListChats> {
     final provider = Provider.of<ListChatsBloc>(context);
     return Scaffold(
       appBar: AppBar(
-        // iconTheme: const IconThemeData(color: Colors.deepPurple),
+        iconTheme: const IconThemeData(color: Colors.deepPurple),
         elevation: 0,
         bottom: PreferredSize(
           preferredSize: const Size(25, 10),
@@ -52,6 +52,29 @@ class _ListChatsState extends State<ListChats> {
             child: const Icon(Icons.more_vert),
           )
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.deepPurple[900],
+              ),
+              accountName: Text(username),
+              accountEmail: Text(email),
+              currentAccountPicture: CircleAvatar(),
+              onDetailsPressed: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text("Logout"),
+              subtitle: const Text("Sign out de esta ceunta"),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/');
+              },
+            ),
+          ],
+        ),
       ),
       body: Stack(
         alignment: Alignment.topCenter,

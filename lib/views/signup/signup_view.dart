@@ -89,7 +89,7 @@ class _ChatterSignUpState extends State<ChatterSignUp> {
                     tag: 'signupbutton',
                     child: CustomButton(
                       onpress: () {
-                        Navigator.pushNamed(context, '/chat');
+                        Navigator.pushNamed(context, '/listChats');
                       },
                       accentColor: Colors.deepPurple,
                       mainColor: Colors.amber,
